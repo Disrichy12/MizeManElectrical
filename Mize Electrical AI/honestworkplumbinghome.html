@@ -697,12 +697,14 @@
         <h2 class="section-title">NEED A SPARK?</h2>
         
         <div style="max-width: 700px; margin: 0 auto; background: black; padding: 3rem; border: 8px solid var(--yellow);">
-            <form id="contact-form">
-                <input type="text" placeholder="YOUR NAME" style="width: 100%; padding: 15px; margin-bottom: 15px; background: #222; border: 3px solid var(--yellow); color: white; font-family: inherit;">
+            <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="f1fb7f6b-fcbd-433d-836b-fa58df1c6d45">
+                
+                <input  type="text" name="name" placeholder="YOUR NAME" style="width: 100%; padding: 15px; margin-bottom: 15px; background: #222; border: 3px solid var(--yellow); color: white; font-family: inherit;">
                 
                 <input type="tel" placeholder="PHONE NUMBER" style="width: 100%; padding: 15px; margin-bottom: 15px; background: #222; border: 3px solid var(--yellow); color: white; font-family: inherit;">
                 
-                <textarea placeholder="TELL US ABOUT YOUR PROJECT..." rows="5" style="width: 100%; padding: 15px; margin-bottom: 20px; background: #222; border: 3px solid var(--yellow); color: white; font-family: inherit;"></textarea>
+                <textarea name="message" placeholder="TELL US ABOUT YOUR PROJECT..." rows="5" style="width: 100%; padding: 15px; margin-bottom: 20px; background: #222; border: 3px solid var(--yellow); color: white; font-family: inherit;"></textarea>
                 
                 <button type="submit" class="cta-button" style="width: 100%; font-size: 1.8rem;">SEND THE SIGNAL ⚡</button>
             </form>
@@ -741,12 +743,7 @@
             });
         });
         
-        // Simple form submission alert
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert("🚨 SIGNAL RECEIVED! A Volt Hero will contact you faster than lightning! ⚡");
-        });
-        
+    
         // Scroll effect for navbar
         window.addEventListener('scroll', () => {
             if (window.scrollY > 100) {
